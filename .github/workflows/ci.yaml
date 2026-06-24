@@ -16,8 +16,8 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v2
         with:
-          username: ${{ DOCKER_USERNAME }}   # Hint: Access your username secret
-          password: ${{ DOCKER_PASSWORD }}   # Hint: Access your password secret
+          username: ${{ secrets.DOCKER_USERNAME }}   # Hint: Access your username secret
+          password: ${{ secrets.DOCKER_PASSWORD }}   # Hint: Access your password secret
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
@@ -25,4 +25,4 @@ jobs:
           context: .
           push: true
           # Hint: Format is username/image-name:tag
-          tags: ${{ username/lang-api }}/lang-api:latest
+          tags: ${{ secrets.DOCKER_USERNAME/lang-api }}/lang-api:latest
