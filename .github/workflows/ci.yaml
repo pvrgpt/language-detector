@@ -1,4 +1,4 @@
-name: Language API CI/CD
+name: Language API CI/CD pipeline
 
 on:
   push:
